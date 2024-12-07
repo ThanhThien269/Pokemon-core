@@ -1,0 +1,3 @@
+id,name,type1,type2,total,hp,attack,defense,spAttack,spDefense,speed,generation,legendary,image,ytbUrl
+1,Pokemon-1,Dark,Water,474,209,241,102,22,202,140,6,FALSE,https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png,https://youtu.be/uBYORdr_TY8
+2,Pokemon-2,Dragon,,683,43,247,196,202,134,212,5,TRUE,https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png,https://youtu.be/uBYORdr_TY8
