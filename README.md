@@ -70,5 +70,17 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 ## License
 
+##Test with Postman
+. register http://localhost:8080/api/v1/auth/register body{email, password > 6 kí tự)
+. login: http://localhost:8080/api/v1/auth/login body(username type email, password )
+. refresh token  http://localhost:8080/api/v1/auth/refresh Authorization -> Bearer Token
+. import csv http://localhost:8080/api/v1/pokemon/import body -> form-data key file File -> upload file + Bearer Token with token access from login
+. get List http://localhost:8080/api/v1/pokemon?page=&limit=  query -> page limit required / optional type/legendary...+ Bearer Token with token access from login
+. get detail http://localhost:8080/api/v1/pokemon/:id + Bearer Token with token access from login
+. mark favorite http://localhost:8080/api/v1/pokemon/:pokeId/favorite/_id + Bearer Token with token access from login (Post)
+. unmark http://localhost:8080/api/v1/pokemon/:pokeId/favorite/_id + Bearer Token with token access from login (DELETE)
+. get user's favorit list http://localhost:8080/api/v1/pokemon/favorites/_id?page=1&limit=20 + Bearer Token with token access from login
+
+
 Nest is [MIT licensed](LICENSE).
 # Pokemon-core
