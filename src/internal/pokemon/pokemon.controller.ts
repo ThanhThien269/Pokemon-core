@@ -19,6 +19,7 @@ export class PokemonController {
   constructor(private readonly pokemonService: PokemonService) {}
 
   @Post('import')
+  // @Public()
   @UseInterceptors(FileInterceptor('file'))
   async importPokemon(@UploadedFile() file: Express.Multer.File) {
     if (!file) {
@@ -59,16 +60,19 @@ export class PokemonController {
   }
 
   @Get(':id')
+  // @Public()
   async getPokemonById(@Param('id') id: string) {
     return this.pokemonService.getPokemonById(id);
   }
 
   @Get(':_id')
+  // @Public()
   async getPokemonByMid(@Param('_id') _id: string) {
     return this.pokemonService.getPokemonByMid(_id);
   }
 
   @Post(':pokemonId/favorite/:userId')
+  // @Public()
   async markFavorite(
     @Param('userId') userId: string,
     @Param('pokemonId') pokemonId: string,
@@ -78,6 +82,7 @@ export class PokemonController {
 
   // API để bỏ đánh dấu Pokémon khỏi yêu thích
   @Delete(':pokemonId/favorite/:userId')
+  // @Public()
   async unmarkFavorite(
     @Param('userId') userId: string,
     @Param('pokemonId') pokemonId: string,
@@ -85,6 +90,7 @@ export class PokemonController {
     return this.pokemonService.unmarkFavorite(userId, pokemonId);
   }
   @Get('favorites/:userId')
+  // @Public()
   async getFavoritePokemons(
     @Param('userId') userId: string,
     @Query('page') page: number = 1, // Thiết lập mặc định cho page là 1
